@@ -1,0 +1,9 @@
+GIT
+
+git init
+git remote add origin https://github.com/bradlasecke/bradlasecke.com.git
+git add .
+git commit -m “First Commit towards personal site”
+git push -u origin master
+
+	will ask for username (bradlasecke) and password (notTypingItInPlainText)
