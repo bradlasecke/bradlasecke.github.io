@@ -20,11 +20,26 @@ div.titleBar {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
+div.container {
+    margin: 1%;
+    opacity: 0.5;
+    background-color: red;
+}
+
 div.navBar {
-    width: 110px;
+    opacity: 1.0;
+    width: 126px;
     height: 200px;
-    line-height: 75px;
-    text-align: center;
+    float: left;
+}
+div.mainBody {
+    opacity: 1.0;
+    color: black;
+    background-color: burlywood;
+    margin-left: 126px;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /* BUTTONS */
@@ -34,7 +49,7 @@ button.barButton {
     color: black;
     float: left;
     width: 110px;
-    margin: 10px;
+    margin: 8px;
     height: 50px;
     text-align: center;
     text-decoration: none;
