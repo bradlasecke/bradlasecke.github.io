@@ -64,13 +64,6 @@ button.barButton {
     transition-duration: 0.4s;
     cursor: pointer;
 }
-button.barButton:hover {
-    background-color: #008CBA;
-    border: 2px solid #008CBA;
-    color: white;
-    width: 118px;
-    height: 60px;
-}
 
 button.connect {
     background-color: #008CBA;
