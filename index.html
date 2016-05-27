@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
   <title>Brad Lasecke</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script>
+        $(window).on('resize', function(event){
+            $("#mainBody").css("margin-left", "126px");
+            $("#menu").css("left", "-200px");
+            $("#navBar").css("left", "10px");
+        });
+    </script>
 
     <style>
         /* Styles for mobile screen sizes */
@@ -31,6 +40,7 @@
                 padding-right: 10px;
                 padding-bottom: 20px;
             }
+            showMenu();
         }
     </style>
 </head>
