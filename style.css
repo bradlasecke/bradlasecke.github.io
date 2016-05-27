@@ -68,9 +68,29 @@ button.barButton:hover {
     background-color: #008CBA;
     border: 2px solid #008CBA;
     color: white;
-    width: 115px;
+    width: 118px;
     height: 60px;
 }
+
+button.connect {
+    background-color: #008CBA;
+    border: 2px solid #008CBA;
+    color: white;
+    width: 150px;
+    height: 60px;
+    display: block;
+    margin: 10px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 25px;
+    text-decoration: none;
+    cursor: pointer;
+}
+button.connect:hover {
+    background-color: #007BAA;
+    border: 2px solid #008CBA;
+    color: white;
+}
+
 
 /* Labels (h1, p, etc) */
 
