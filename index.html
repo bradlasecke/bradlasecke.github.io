@@ -34,24 +34,37 @@
                 Computing has helped cure diseases, create modern vehicles, bring humanity to the moon, and so many other victories. <br><br>
                 I want to become a part of these victories, I want to help push humankind forward, I want to help people.
             </p>
+            <CENTER><img id="resume"></CENTER>
         </div>
     </div>
 
     <script>
     function setBodyToAbout() {
         document.getElementById("mainBodyTitle").innerHTML = "About Brad";
-        document.getElementById("mainBodyText").innerHTML = "About Brad";
+        document.getElementById("mainBodyText").innerHTML = document.getElementById('about').innerHTML;
+        document.getElementById("resume").src = "";
     }
         
     function setBodyToResume() {
         document.getElementById("mainBodyTitle").innerHTML = "Brad's Résumé";
-        document.getElementById("mainBodyText").innerHTML = "Brad's Résumé";
+        document.getElementById("resume").src = "BradLaseckeResume.pdf"
+        document.getElementById("mainBodyText").innerHTML = "";
     }
      
     function setBodyToPortfolio() {
         document.getElementById("mainBodyTitle").innerHTML = "Brad's Creations";
-        document.getElementById("mainBodyText").innerHTML = "Brad's Creations";
+        document.getElementById("mainBodyText").innerHTML = "To Do";
     }
     </script>
+    
+    <script id="about" language="text">
+        Hi, I'm Brad! <br>
+                I'm a software developer, currently enrolled at University of California, Santa Barbara, studying computer science. <br><br>
+                I enjoy everything from creating rich web pages to implementing mobile apps with a custom server backend. <br><br>
+                I discovered my love for computer science when I realized how computers have shaped our modern world. <br>Computer scientists have brought what we have today, and they have helped push every field to perform faster and more efficiently.<br>
+                Computing has helped cure diseases, create modern vehicles, bring humanity to the moon, and so many other victories. <br><br>
+                I want to become a part of these victories, I want to help push humankind forward, I want to help people.
+    </script>
+    
 </body>
 </html>
