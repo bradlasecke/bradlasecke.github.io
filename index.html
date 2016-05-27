@@ -19,9 +19,9 @@
     <div class="container">
         <div class="navBar">
             <button class="barButton" onclick="setBodyToAbout()">About</button>
-            <button class="barButton" onclick="setBodyToResume()">Résumé</button>
             <button class="barButton" onclick="setBodyToPortfolio()">Portfolio</button>
-            <a href="mailto:bradlasecke@yahoo.com"><button class="barButton">Contact</button></a>
+            <button class="barButton" onclick="setBodyToResume()">Résumé</button>
+            <button class="barButton" onclick="connect()">Connect</button>
         </div>
 
         <div class="mainBody" id="mainBody">
@@ -48,7 +48,6 @@
     function setBodyToResume() {
         document.getElementById("mainBodyTitle").innerHTML = "Résumé";
         document.getElementById("mainBodyText").innerHTML = "";
-        //document.getElementById("resume").src = "BradLaseckeResume.pdf"
         createResume();
     }
      
@@ -56,6 +55,12 @@
         document.getElementById("mainBodyTitle").innerHTML = "Portfolio";
         document.getElementById("mainBodyText").innerHTML = "To Do";
         deleteResume();
+    }
+        
+    function connect() {
+        deleteResume();
+        document.getElementById("mainBodyTitle").innerHTML = "Connect";
+        document.getElementById("mainBodyText").innerHTML = document.getElementById('connectTypes').innerHTML;
     }
         
     function createResume() {
@@ -75,11 +80,32 @@
     
     <script id="about" language="text">
         Hi, I'm Brad! <br>
-                I'm a software developer, currently enrolled at University of California, Santa Barbara, studying computer science. <br><br>
+                I'm a software developer currently enrolled at University of California, Santa Barbara, studying computer science. <br><br>
                 I enjoy everything from creating rich web pages to implementing mobile apps with a custom server backend. <br><br>
                 I discovered my love for computer science when I realized how computers have shaped our modern world. <br>Computer scientists have brought what we have today, and they have helped push every field to perform faster and more efficiently.<br>
                 Computing has helped cure diseases, create modern vehicles, bring humanity to the moon, and so many other victories. <br><br>
                 I want to become a part of these victories, I want to help push humankind forward, I want to help people.
+    </script>
+    
+    <script id="connectTypes" language="text">
+        <div>
+            <CENTER>
+            <p style="text-align: center;"> You can connect with Brad on social media, or simply send an email!</p>
+            
+            <form action="https://www.linkedin.com/in/brad-lasecke-a7b873b1">
+                <button class="connect">LinkedIn</button>
+            </form>
+                
+            <form action="https://www.facebook.com/bradlasecke">
+                <button class="connect">Facebook</button>
+            </form>
+                
+            <form action="mailto:bradlasecke@yahoo.com">
+                <button class="connect">Email</button>
+            </form>
+            
+            </CENTER>
+        </div>
     </script>
     
 </body>
