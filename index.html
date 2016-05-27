@@ -24,8 +24,8 @@
             <a href="mailto:bradlasecke@yahoo.com"><button class="barButton">Contact</button></a>
         </div>
 
-        <div class="mainBody">
-            <h1 id="mainBodyTitle">About Brad</h1>
+        <div class="mainBody" id="mainBody">
+            <h1 id="mainBodyTitle">About</h1>
             <p id="mainBodyText">
                 Hi, I'm Brad! <br>
                 I'm a software developer, currently enrolled at University of California, Santa Barbara, studying computer science. <br><br>
@@ -40,20 +40,36 @@
 
     <script>
     function setBodyToAbout() {
-        document.getElementById("mainBodyTitle").innerHTML = "About Brad";
+        document.getElementById("mainBodyTitle").innerHTML = "About";
         document.getElementById("mainBodyText").innerHTML = document.getElementById('about').innerHTML;
-        document.getElementById("resume").src = "";
+        deleteResume();
     }
         
     function setBodyToResume() {
-        document.getElementById("mainBodyTitle").innerHTML = "Brad's Résumé";
-        document.getElementById("resume").src = "BradLaseckeResume.pdf"
+        document.getElementById("mainBodyTitle").innerHTML = "Résumé";
         document.getElementById("mainBodyText").innerHTML = "";
+        //document.getElementById("resume").src = "BradLaseckeResume.pdf"
+        createResume();
     }
      
     function setBodyToPortfolio() {
-        document.getElementById("mainBodyTitle").innerHTML = "Brad's Creations";
+        document.getElementById("mainBodyTitle").innerHTML = "Portfolio";
         document.getElementById("mainBodyText").innerHTML = "To Do";
+        deleteResume();
+    }
+        
+    function createResume() {
+        var x = document.createElement("img");
+        x.setAttribute("src", "BradLaseckeResume.pdf");
+        x.setAttribute("width", "500");
+        x.setAttribute("width", "650");
+        document.getElementById("mainBody").appendChild(x);
+    }
+    function deleteResume() {
+        var imgs = document.getElementsByTagName("img");
+        for(i = imgs.length - 1; i >= 0; i--) {
+            imgs[i].parentNode.removeChild(imgs[i]);
+        }
     }
     </script>
     
