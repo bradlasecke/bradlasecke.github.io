@@ -6,6 +6,33 @@
   <link rel="stylesheet" href="style.css">
   <title>Brad Lasecke</title>
 
+    <style>
+        /* Styles for mobile screen sizes */
+        @media only screen and (min-width: 0px) and (max-width: 600px) {
+            div.navBar {
+                position: absolute;
+                left: -200px;
+            }
+            button.menu {
+                left: 18px;
+                top: 116px;
+                display: block;
+                position: absolute;
+            }
+            div.mainBody {
+                margin-left: 2px;
+            }
+        }
+        @media only screen (min-width: 601px) {
+            div.mainBody {
+                margin-left: 126px;
+                padding-top: 8px;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-bottom: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -16,8 +43,9 @@
         </div>
     </a>
     
+    <button class="menu" id="menu" onclick="showMenu()"></button>
     <div class="container">
-        <div class="navBar">
+        <div class="navBar" id="navBar">
             <button class="barButton" onclick="setBodyToAbout()">About</button>
             <button class="barButton" onclick="setBodyToPortfolio()">Portfolio</button>
             <button class="barButton" onclick="setBodyToResume()">Résumé</button>
@@ -43,24 +71,28 @@
         document.getElementById("mainBodyTitle").innerHTML = "About";
         document.getElementById("mainBodyText").innerHTML = document.getElementById('about').innerHTML;
         deleteResume();
+        hideMenu();
     }
         
     function setBodyToResume() {
         document.getElementById("mainBodyTitle").innerHTML = "Résumé";
         document.getElementById("mainBodyText").innerHTML = "";
         createResume();
+        hideMenu();
     }
      
     function setBodyToPortfolio() {
         document.getElementById("mainBodyTitle").innerHTML = "Portfolio";
         document.getElementById("mainBodyText").innerHTML = "To Do";
         deleteResume();
+        hideMenu();
     }
         
     function connect() {
         deleteResume();
         document.getElementById("mainBodyTitle").innerHTML = "Connect";
         document.getElementById("mainBodyText").innerHTML = document.getElementById('connectTypes').innerHTML;
+        hideMenu();
     }
         
     function createResume() {
@@ -76,8 +108,22 @@
             imgs[i].parentNode.removeChild(imgs[i]);
         }
     }
+        
+    function showMenu() {
+        document.getElementById("navBar").style.left = "10px";
+        document.getElementById("mainBody").style.marginLeft = "126px";
+        document.getElementById("menu").style.left = "-200px";
+    }
+    function hideMenu() {
+        document.getElementById("navBar").style.left = "-200px";
+        document.getElementById("mainBody").style.marginLeft = "2px";
+        document.getElementById("menu").style.left = "18px";
+        document.getElementById("menu").style.top = "116px";
+    }
     </script>
     
+    
+    <!-- micro-HTML files to fill the mainBody <p> tag with -->
     <script id="about" language="text">
         Hi, I'm Brad! <br>
                 I'm a software developer currently enrolled at University of California, Santa Barbara, studying computer science. <br><br>
