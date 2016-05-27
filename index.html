@@ -110,14 +110,14 @@
     }
         
     function showMenu() {
-        if(screen.width < 600) {
+        if(window.innerWidth < 600) {
             document.getElementById("navBar").style.left = "10px";
             document.getElementById("mainBody").style.marginLeft = "126px";
             document.getElementById("menu").style.left = "-200px";
         }
     }
     function hideMenu() {
-        if(screen.width < 600) {
+        if(window.innerWidth < 600) {
             document.getElementById("navBar").style.left = "-200px";
             document.getElementById("mainBody").style.marginLeft = "2px";
             document.getElementById("menu").style.left = "18px";
