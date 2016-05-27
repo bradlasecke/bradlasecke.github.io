@@ -68,3 +68,15 @@ button.barButton:hover {
     width: 115px;
     height: 60px;
 }
+
+/* Labels (h1, p, etc) */
+
+#mainBodyTitle {
+    margin-top: 5px;
+    text-align: center;
+}
+
+#mainBodyText {
+    margin-left: 20px;
+    margin-right: 20px;
+}
