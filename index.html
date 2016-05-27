@@ -10,23 +10,22 @@
 <body>
 
     <a href="index.html">
-      <CENTER>
         <div class="titleBar">
             Brad Lasecke
-            <p style="margin-top:-50px;">_____________</p>
+            <CENTER><p style="margin-top:-50px;">_________________</p></CENTER>
         </div>
-        </CENTER>
     </a>
     
     <div class="container">
         <div class="navBar">
-            <button class="barButton">About Brad</button>
-            <button class="barButton">Résumé</button>
+            <button class="barButton" onclick="setBodyToAbout()">About</button>
+            <button class="barButton" onclick="setBodyToResume()">Résumé</button>
+            <button class="barButton" onclick="setBodyToPortfolio()">Portfolio</button>
             <a href="mailto:bradlasecke@yahoo.com"><button class="barButton">Contact</button></a>
         </div>
 
         <div class="mainBody">
-            <p>
+            <p id="mainBodyText">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In scelerisque nisi purus, sed maximus risus lobortis sit amet. Aenean venenatis sem vel arcu maximus, vel rhoncus nulla mollis. Quisque vehicula ligula id quam suscipit fringilla. Proin porta, sapien vel scelerisque eleifend, turpis nisl blandit lectus, vitae placerat mi arcu non ex. Fusce eget iaculis dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis tempor justo ut tellus convallis lacinia ac vitae felis. Pellentesque et tristique orci. Curabitur ullamcorper, enim et condimentum ultricies, arcu erat pretium est, eget ultrices tellus leo a lorem. Pellentesque neque justo, elementum eu enim porttitor, dapibus cursus libero.<br><br>
 
             In finibus elit id orci lacinia ultricies. Etiam non libero ac diam congue pulvinar. Integer rutrum felis vitae justo ullamcorper, ac interdum velit lacinia. Nam posuere molestie dolor vitae vulputate. Etiam egestas ultricies erat, in volutpat libero cursus id. Nulla lacinia lobortis odio id congue. Morbi blandit eget ipsum vitae tempus. Pellentesque quis pulvinar mauris, condimentum commodo enim. Fusce vel turpis lorem. Integer quis urna et orci lobortis convallis in in diam. Suspendisse quis varius est, sit amet sollicitudin augue. Proin semper augue sed ex dictum, dignissim tristique nisi elementum. Phasellus hendrerit a lacus sed ultrices. Suspendisse volutpat risus eros, id hendrerit augue ultrices vel. Suspendisse vitae turpis vitae nisl rutrum faucibus venenatis molestie ex. Proin consectetur eros eget tincidunt laoreet.<br><br>
@@ -57,5 +56,18 @@
         </div>
     </div>
 
+    <script>
+    function setBodyToAbout() {
+        document.getElementById("mainBodyText").innerHTML = "About Brad";
+    }
+        
+    function setBodyToResume() {
+        document.getElementById("mainBodyText").innerHTML = "Brad's Résumé";
+    }
+     
+    function setBodyToPortfolio() {
+        document.getElementById("mainBodyText").innerHTML = "Brad's Creations";
+    }
+    </script>
 </body>
 </html>
