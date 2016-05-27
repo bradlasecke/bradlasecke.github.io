@@ -9,9 +9,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script>
         var $width = 0;
+        var activeButtonID = "about";
         
         $(window).load(function() {
             $width = $(window).width();
+            setActiveButton();
         });
         
         $(window).on('resize', function(event){
@@ -65,89 +67,115 @@
     <button class="menu" id="menu" onclick="showMenu()"></button>
     <div class="container">
         <div class="navBar" id="navBar">
-            <button class="barButton" onclick="setBodyToAbout()">About</button>
-            <button class="barButton" onclick="setBodyToPortfolio()">Portfolio</button>
-            <button class="barButton" onclick="setBodyToResume()">Résumé</button>
-            <button class="barButton" onclick="connect()">Connect</button>
+            <button class="barButton" id="about" onclick="setBodyToAbout()">About</button>
+            <button class="barButton" id="portfolio" onclick="setBodyToPortfolio()">Portfolio</button>
+            <button class="barButton" id="res" onclick="setBodyToResume()">Résumé</button>
+            <button class="barButton" id="connect" onclick="connect()">Connect</button>
         </div>
 
         <div class="mainBody" id="mainBody">
             <h1 id="mainBodyTitle">About</h1>
             <p id="mainBodyText">
                 Hi, I'm Brad! <br>
-                I'm a software developer, currently enrolled at University of California, Santa Barbara, studying computer science. <br><br>
+                I'm a software developer currently enrolled at University of California, Santa Barbara, studying computer science. <br><br>
                 I enjoy everything from creating rich web pages to implementing mobile apps with a custom server backend. <br><br>
                 I discovered my love for computer science when I realized how computers have shaped our modern world. <br>Computer scientists have brought what we have today, and they have helped push every field to perform faster and more efficiently.<br>
                 Computing has helped cure diseases, create modern vehicles, bring humanity to the moon, and so many other victories. <br><br>
                 I want to become a part of these victories, I want to help push humankind forward, I want to help people.
             </p>
-            <CENTER><img id="resume"></CENTER>
         </div>
     </div>
 
     <script>
-    function setBodyToAbout() {
-        document.getElementById("mainBodyTitle").innerHTML = "About";
-        document.getElementById("mainBodyText").innerHTML = document.getElementById('about').innerHTML;
-        deleteResume();
-        hideMenu();
-    }
-        
-    function setBodyToResume() {
-        document.getElementById("mainBodyTitle").innerHTML = "Résumé";
-        document.getElementById("mainBodyText").innerHTML = "";
-        createResume();
-        hideMenu();
-    }
-     
-    function setBodyToPortfolio() {
-        document.getElementById("mainBodyTitle").innerHTML = "Portfolio";
-        document.getElementById("mainBodyText").innerHTML = "To Do";
-        deleteResume();
-        hideMenu();
-    }
-        
-    function connect() {
-        deleteResume();
-        document.getElementById("mainBodyTitle").innerHTML = "Connect";
-        document.getElementById("mainBodyText").innerHTML = document.getElementById('connectTypes').innerHTML;
-        hideMenu();
-    }
-        
-    function createResume() {
-        var x = document.createElement("img");
-        x.setAttribute("src", "BradLaseckeResume.pdf");
-        x.setAttribute("width", "100%");
-        x.setAttribute("height", "auto");
-        document.getElementById("mainBody").appendChild(x);
-    }
-    function deleteResume() {
-        var imgs = document.getElementsByTagName("img");
-        for(i = imgs.length - 1; i >= 0; i--) {
-            imgs[i].parentNode.removeChild(imgs[i]);
+        function setBodyToAbout() {
+            document.getElementById("mainBodyTitle").innerHTML = "About";
+            document.getElementById("mainBodyText").innerHTML = document.getElementById('aboutText').innerHTML;
+            deleteResume();
+            hideMenu();
+            activeButtonID = "about";
+            setActiveButton();
         }
-    }
-        
-    function showMenu() {
-        if(window.innerWidth < 600) {
-            document.getElementById("navBar").style.left = "10px";
-            document.getElementById("mainBody").style.marginLeft = "126px";
-            document.getElementById("menu").style.left = "-200px";
+
+        function setBodyToResume() {
+            document.getElementById("mainBodyTitle").innerHTML = "Résumé";
+            document.getElementById("mainBodyText").innerHTML = "";
+            createResume();
+            hideMenu();
+            activeButtonID = "res";
+            setActiveButton();
         }
-    }
-    function hideMenu() {
-        if(window.innerWidth < 600) {
-            document.getElementById("navBar").style.left = "-200px";
-            document.getElementById("mainBody").style.marginLeft = "2px";
-            document.getElementById("menu").style.left = "18px";
-            document.getElementById("menu").style.top = "116px";
+
+        function setBodyToPortfolio() {
+            document.getElementById("mainBodyTitle").innerHTML = "Portfolio";
+            document.getElementById("mainBodyText").innerHTML = "To Do";
+            deleteResume();
+            hideMenu();
+            activeButtonID = "portfolio";
+            setActiveButton();
         }
-    }
+
+        function connect() {
+            deleteResume();
+            document.getElementById("mainBodyTitle").innerHTML = "Connect";
+            document.getElementById("mainBodyText").innerHTML = document.getElementById('connectTypes').innerHTML;
+            hideMenu();
+            activeButtonID = "connect";
+            setActiveButton();
+        }
+
+        function createResume() {
+            var x = document.createElement("img");
+            x.setAttribute("src", "BradLaseckeResume.pdf");
+            x.setAttribute("width", "100%");
+            x.setAttribute("height", "auto");
+            document.getElementById("mainBody").appendChild(x);
+        }
+        function deleteResume() {
+            var imgs = document.getElementsByTagName("img");
+            for(i = imgs.length - 1; i >= 0; i--) {
+                imgs[i].parentNode.removeChild(imgs[i]);
+            }
+        }
+
+        function showMenu() {
+            if(window.innerWidth < 600) {
+                document.getElementById("navBar").style.left = "10px";
+                document.getElementById("mainBody").style.marginLeft = "126px";
+                document.getElementById("menu").style.left = "-200px";
+            }
+        }
+        function hideMenu() {
+            if(window.innerWidth < 600) {
+                document.getElementById("navBar").style.left = "-200px";
+                document.getElementById("mainBody").style.marginLeft = "2px";
+                document.getElementById("menu").style.left = "18px";
+                document.getElementById("menu").style.top = "116px";
+            }
+        }
+        function setActiveButton() {
+            var buttons = document.getElementsByClassName("barButton");
+            for(i = buttons.length - 1; i >= 0; i--) {
+                if(buttons[i].id == activeButtonID) {
+                    buttons[i].style.width = "118px";
+                    buttons[i].style.height = "60px";
+                    buttons[i].style.backgroundColor = "#008CBA";
+                    buttons[i].style.border = "2px solid #008CBA";
+                    buttons[i].style.color = "white";
+                }
+                else {
+                    buttons[i].style.width = "110px";
+                    buttons[i].style.height = "50px";
+                    buttons[i].style.backgroundColor = "#add8e6";
+                    buttons[i].style.border = "2px solid #add8e6";
+                    buttons[i].style.color = "black";
+                }
+            }
+        }
     </script>
     
     
     <!-- micro-HTML files to fill the mainBody <p> tag with -->
-    <script id="about" language="text">
+    <script id="aboutText" language="text">
         Hi, I'm Brad! <br>
                 I'm a software developer currently enrolled at University of California, Santa Barbara, studying computer science. <br><br>
                 I enjoy everything from creating rich web pages to implementing mobile apps with a custom server backend. <br><br>
