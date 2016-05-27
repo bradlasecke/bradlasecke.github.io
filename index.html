@@ -8,10 +8,19 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script>
+        var $width = 0;
+        
+        $(window).load(function() {
+            $width = $(window).width();
+        });
+        
         $(window).on('resize', function(event){
-            $("#mainBody").css("margin-left", "126px");
-            $("#menu").css("left", "-200px");
-            $("#navBar").css("left", "10px");
+            if($width != $(window).width()) {
+                $("#mainBody").css("margin-left", "126px");
+                $("#menu").css("left", "-200px");
+                $("#navBar").css("left", "10px");
+            }
+            $width = $(window).width();
         });
     </script>
 
