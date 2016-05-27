@@ -11,10 +11,11 @@
     <script>
         var $width = 0;
         var activeButtonID = "about";
+        var activeAboutTab = "history";
         
         $(window).load(function() {
             $width = $(window).width();
-            setActiveButton();
+            setBodyToAbout();
         });
         
         $(window).on('resize', function(event){
@@ -61,7 +62,7 @@
     <a href="index.html">
         <div class="titleBar">
             Brad Lasecke
-            <CENTER><p style="margin-top:-20px;">_________________</p></CENTER>
+            <CENTER><p class="line"></p></CENTER>
         </div>
     </a>
     
@@ -76,14 +77,7 @@
 
         <div class="mainBody" id="mainBody">
             <h1 id="mainBodyTitle">About</h1>
-            <p id="mainBodyText">
-                Hi, I'm Brad! <br>
-                I'm a software developer currently enrolled at University of California, Santa Barbara, studying computer science. <br><br>
-                I enjoy everything from creating rich web pages to implementing mobile apps with a custom server backend. <br><br>
-                I discovered my love for computer science when I realized how computers have shaped our modern world. <br>Computer scientists have brought what we have today, and they have helped push every field to perform faster and more efficiently.<br>
-                Computing has helped cure diseases, create modern vehicles, bring humanity to the moon, and so many other victories. <br><br>
-                I want to become a part of these victories, I want to help push humankind forward, I want to help people.
-            </p>
+            <p id="mainBodyText"></p>
         </div>
     </div>
 
@@ -95,6 +89,7 @@
             hideMenu();
             activeButtonID = "about";
             setActiveButton();
+            setInfo(activeAboutTab);
         }
 
         function setBodyToResume() {
@@ -108,7 +103,7 @@
 
         function setBodyToPortfolio() {
             document.getElementById("mainBodyTitle").innerHTML = "Portfolio";
-            document.getElementById("mainBodyText").innerHTML = "To Do";
+            document.getElementById("mainBodyText").innerHTML = "Coming soon";
             deleteResume();
             hideMenu();
             activeButtonID = "portfolio";
@@ -172,17 +167,85 @@
                 }
             }
         }
+        function setActiveTab() {
+            var buttons = document.getElementsByClassName("aboutMe");
+            for(i = buttons.length - 1; i >= 0; i--) {
+                if(buttons[i].value == activeAboutTab) {
+                    buttons[i].style.borderBottom = "0px";
+                }
+                else {
+                    buttons[i].style.borderBottom = "2px solid black";
+                }
+            }
+        }
+        function setInfo(val) {
+            activeAboutTab = val;
+            document.getElementById("currentInfo").innerHTML = document.getElementById(val).innerHTML;
+            setActiveTab();
+        }
     </script>
     
     
     <!-- micro-HTML files to fill the mainBody <p> tag with -->
     <script id="aboutText" language="text">
+        <div>
         Hi, I'm Brad! <br>
-                I'm a software developer currently enrolled at University of California, Santa Barbara, studying computer science. <br><br>
-                I enjoy everything from creating rich web pages to implementing mobile apps with a custom server backend. <br><br>
-                I discovered my love for computer science when I realized how computers have shaped our modern world. <br>Computer scientists have brought what we have today, and they have helped push every field to perform faster and more efficiently.<br>
-                Computing has helped cure diseases, create modern vehicles, bring humanity to the moon, and so many other victories. <br><br>
-                I want to become a part of these victories, I want to help push humankind forward, I want to help people.
+                I'm a software developer currently enrolled at University of California, Santa Barbara, studying computer science. In my free time, I have taught myself how to create responsive web pages, build custom cloud servers, and create rich mobile applications.
+        </div>
+                <div class="moreInfo">
+                    <div class="buttonContainer">
+                        <button class="aboutMe" value="history" onclick="setInfo(this.value)">History</button>
+                        <button class="aboutMe" value="skills" onclick="setInfo(this.value)">Skills</button>
+                        <button class="aboutMe" value="drive" onclick="setInfo(this.value)">Drive</button>
+                    </div>
+                    <div class="currentInfo" id="currentInfo"></div>
+                </div>
+                
+    </script>
+    
+    <script id="history" language="text">
+        I grew up in the Bay Area, California. I graduated from Los Gatos High School in 2013, and moved on to De Anza College to start my college career, even though I had no idea what I wanted to do, but who does, when they're fresh out of high school! <br><br>
+        Shortly after begining school there, I got a job at Apple Retail, working as a specialist. I got to see, from first hand experience, how technology affects every individual person in different, but uplifting ways. From seeing these wonderful experiences, I decided that I wanted to help people make their lives better through technology.<br><br>
+        I declared myself as a computer science major at De Anza College, and also began my journey at Apple to become a part of the Genius team there. I studied programming languages and concepts in school, and I was able to see how this software can affect the real world from troubleshooting issues with customers at the Genius Bar.<br><br>
+        I graduated from De Anza College in 2016, and am currently enrolled in University of California, Santa Barbara. I hope to pursue my passion for knowledge and hope to push technology to its limits while I'm there.
+    </script>
+    
+    <script id="skills" language="text">
+        <div class ="listBlock">
+            <p style="text-align:center">Programming Languages</p>
+            <p class="line"></p>
+            <ul>
+                <li>HTML/CSS</li>
+                <li>Javascript/jQuery</li>
+                <li>C++</li>
+                <li>Objective-C</li>
+                <li>Swift</li>
+                <li>PHP</li>
+                <li>MySQL</li>
+                <li>Bash</li>
+                <li>Assembly</li>
+            </ul>
+        </div>
+    </script>
+    
+    <script id="drive" language="text">
+        <p class="indent">
+    Ever since I was a kid, I have been fascinated with technology and what it can bring to the world. More importantly, I enjoy seeing how technology can positively effect each and every individual in our lives. It is exciting, to me, to see others smiling from something so simple as a photo being taken by a piece of technology that is always with them.</p>
+        
+    <p class="indent">
+	My grandfather loved looking back on photos for memories. At occasional family gatherings, he would bring out old scrapbooks that he made to reminisce on older times. His face would light up on certain photos, and everyone else radiated from his energy.</p>
+    
+    <p class="indent">
+	It is for times like those that I want to major in computer science. I want to be close to new technology, so I can allow others to experience more heartfelt moments and have fun with the technology while they’re at it. I want to bring as much joy to each person that I can through technology. Whether that’s creating an entirely new device, or just simply creating a single new app, I want to be a creative individual to come up with new ideas for advancement in technology. </p>
+    
+    <p class="indent">
+	“People don't know what they want until you show it to them.” This quote holds merit because it represents a jump into a new age of technology. People didn’t know what they needed until Steve Jobs came out with a user-friendly device that allowed anyone to connect with everyone and more, simply by touching the device. </p>
+    
+    <p class="indent">
+	Steve Jobs had a revolutionary mind, and he managed to inspire me to think of creative, innovative, and even inspiring new ideas to help change the world. I believe that Jobs is correct in his bold statement, the majority of the world cannot think of new inventions or ideas to change the world. Even Henry Ford said, “If I had asked people what they wanted, they would have said faster horses.” This goes to show that advancements in technology are apparent around every corner of our history and of our future, and all it takes is one person to come out with a new idea. It baffles me that there are still technologies out there that people haven’t created.</p>
+    
+    <p class="indent">
+	I’m not saying I will create an unheard of technology in our current time period like what Ford and Jobs had both done. What I am saying is that I can do my best. Maybe my best will bring me, and the world, a new revolutionary idea, or maybe my best will give me an idea to create a simple new app. Regardless of the outcome, I am a creative person who can help the general public have more fun, be more productive, and hopefully bewilder them with a new invention. My goal is to help as many people as I can with the life I was given, and the brain that I have.</p>
     </script>
     
     <script id="connectTypes" language="text">
