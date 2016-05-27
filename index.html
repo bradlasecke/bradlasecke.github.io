@@ -29,7 +29,7 @@
 
     <style>
         /* Styles for mobile screen sizes */
-        @media only screen and (min-width: 0px) and (max-width: 600px) {
+        @media only screen and (min-width: 0px) and (max-width: 400px) {
             div.navBar {
                 position: absolute;
                 left: -200px;
@@ -44,7 +44,7 @@
                 margin-left: 2px;
             }
         }
-        @media only screen (min-width: 601px) {
+        @media only screen (min-width: 401px) {
             div.mainBody {
                 margin-left: 126px;
                 padding-top: 8px;
@@ -139,14 +139,14 @@
         }
 
         function showMenu() {
-            if(window.innerWidth < 600) {
-                document.getElementById("navBar").style.left = "14px";
+            if(window.innerWidth < 400) {
+                document.getElementById("navBar").style.left = "15px";
                 document.getElementById("mainBody").style.marginLeft = "126px";
                 document.getElementById("menu").style.left = "-200px";
             }
         }
         function hideMenu() {
-            if(window.innerWidth < 600) {
+            if(window.innerWidth < 400) {
                 document.getElementById("navBar").style.left = "-200px";
                 document.getElementById("mainBody").style.marginLeft = "2px";
                 document.getElementById("menu").style.left = "18px";
