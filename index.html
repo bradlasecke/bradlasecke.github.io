@@ -25,6 +25,7 @@
         </div>
 
         <div class="mainBody">
+            <CENTER><h1 id="mainBodyTitle"></h1></CENTER>
             <p id="mainBodyText">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In scelerisque nisi purus, sed maximus risus lobortis sit amet. Aenean venenatis sem vel arcu maximus, vel rhoncus nulla mollis. Quisque vehicula ligula id quam suscipit fringilla. Proin porta, sapien vel scelerisque eleifend, turpis nisl blandit lectus, vitae placerat mi arcu non ex. Fusce eget iaculis dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis tempor justo ut tellus convallis lacinia ac vitae felis. Pellentesque et tristique orci. Curabitur ullamcorper, enim et condimentum ultricies, arcu erat pretium est, eget ultrices tellus leo a lorem. Pellentesque neque justo, elementum eu enim porttitor, dapibus cursus libero.<br><br>
 
@@ -58,14 +59,17 @@
 
     <script>
     function setBodyToAbout() {
+        document.getElementById("mainBodyTitle").innerHTML = "About Brad";
         document.getElementById("mainBodyText").innerHTML = "About Brad";
     }
         
     function setBodyToResume() {
+        document.getElementById("mainBodyTitle").innerHTML = "Brad's Résumé";
         document.getElementById("mainBodyText").innerHTML = "Brad's Résumé";
     }
      
     function setBodyToPortfolio() {
+        document.getElementById("mainBodyTitle").innerHTML = "Brad's Creations";
         document.getElementById("mainBodyText").innerHTML = "Brad's Creations";
     }
     </script>
