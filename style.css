@@ -91,6 +91,16 @@ button.connect:hover {
     color: white;
 }
 
+button.menu {
+    background-color: #add8e6;
+    display: none;
+    width: 25px;
+    height: 25px;
+    left: -200px;
+    border: 1px solid #008CBA;
+    color: black;
+}
+
 
 /* Labels (h1, p, etc) */
 
