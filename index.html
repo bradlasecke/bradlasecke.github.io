@@ -204,6 +204,7 @@
         }
         function setInfo(val) {
             activeAboutTab = val;
+            hideMenu();
             document.getElementById("currentInfo").innerHTML = document.getElementById(val).innerHTML;
             setActiveTab();
         }
