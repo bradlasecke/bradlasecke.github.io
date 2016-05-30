@@ -12,6 +12,8 @@
         var $width = 0;
         var activeButtonID = "about";
         var activeAboutTab = "history";
+        var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent); 
+        //to set a link to the iOS app store in the portfolio page if the user has an iOS device
         
         $(window).load(function() {
             $width = $(window).width();
@@ -108,6 +110,7 @@
     <script>
         function setBodyToAbout() {
             document.getElementById("mainBodyTitle").innerHTML = "About";
+            document.getElementById("mainBody").style.backgroundColor = "#FAFAFA";
             document.getElementById("mainBodyText").innerHTML = document.getElementById('aboutText').innerHTML;
             deleteResume();
             hideMenu();
@@ -127,7 +130,8 @@
 
         function setBodyToPortfolio() {
             document.getElementById("mainBodyTitle").innerHTML = "Portfolio";
-            document.getElementById("mainBodyText").innerHTML = "Coming soon";
+            document.getElementById("mainBody").style.backgroundColor = "rgba(0,0,0,0)";
+            document.getElementById("mainBodyText").innerHTML = document.getElementById("portfolioInfo").innerHTML;
             deleteResume();
             hideMenu();
             activeButtonID = "portfolio";
@@ -144,6 +148,7 @@
         }
 
         function createResume() {
+            deleteResume();
             var x = document.createElement("img");
             x.setAttribute("src", "BradLaseckeResume.pdf");
             x.setAttribute("width", "100%");
@@ -206,12 +211,25 @@
             activeAboutTab = val;
             hideMenu();
             document.getElementById("currentInfo").innerHTML = document.getElementById(val).innerHTML;
+            if(val == "skills") {
+                document.getElementById("currentInfo").style.textAlign = "center";
+            }
+            else {
+                document.getElementById("currentInfo").style.textAlign = "left";
+            }
             setActiveTab();
         }
     </script>
     
     
     <!-- micro-HTML files to fill the mainBody <p> tag with -->
+    <script id="portfolioInfo" language="text">
+        <div class="portfolio">
+            Coming soon
+        </div>
+                
+    </script>
+    
     <script id="aboutText" language="text">
         <div>
         Hi, I'm Brad! <br>
@@ -230,8 +248,8 @@
     
     <script id="history" language="text">
         I grew up in the Bay Area, California. I graduated from Los Gatos High School in 2013, and moved on to De Anza College to start my college career, even though I had no idea what I wanted to do, but who does, when they're fresh out of high school! <br><br>
-        Shortly after begining school there, I got a job at Apple Retail, working as a specialist. I got to see, from first hand experience, how technology affects every individual person in different, but uplifting ways. From seeing these wonderful experiences, I decided that I wanted to help people make their lives better through technology.<br><br>
-        I declared myself as a computer science major at De Anza College, and also began my journey at Apple to become a part of the Genius team there. I studied programming languages and concepts in school, and I was able to see how this software can affect the real world from troubleshooting issues with customers at the Genius Bar.<br><br>
+        Shortly after beginning school there, I got a job at Apple Retail, working as a specialist. I got to see, from first hand experience, how technology effects every individual person in different, but uplifting ways. From seeing these wonderful experiences, I decided that I wanted to help people make their lives better through technology.<br><br>
+        I declared myself as a computer science major at De Anza College, and also began my journey at Apple to become a part of the Genius team there. I studied programming languages and concepts in school, and I was able to see how this software can effect the real world from troubleshooting issues with customers at the Genius Bar.<br><br>
         I graduated from De Anza College in 2016, and am currently enrolled in University of California, Santa Barbara. I hope to pursue my passion for knowledge and hope to push technology to its limits while I'm there.
     </script>
     
