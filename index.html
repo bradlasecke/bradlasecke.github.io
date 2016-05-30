@@ -31,7 +31,7 @@
 
     <style>
         /* Styles for mobile screen sizes */
-        @media only screen and (min-width: 0px) and (max-width: 400px) {
+        @media only screen and (min-width: 0px) and (max-width: 420px) {
             div.navBar {
                 position: absolute;
                 left: -200px;
@@ -70,7 +70,7 @@
                 background-color: transparent;
             }
         }
-        @media only screen (min-width: 401px) {
+        @media only screen (min-width: 421px) {
             div.mainBody {
                 margin-left: 126px;
                 padding-top: 8px;
@@ -92,6 +92,7 @@
     </a>
     
     <button class="menu" id="menu" onclick="showMenu()"></button>
+    
     <div class="container">
         <div class="navBar" id="navBar">
             <button class="barButton" id="about" onclick="setBodyToAbout()">About</button>
@@ -99,10 +100,10 @@
             <button class="barButton" id="res" onclick="setBodyToResume()">Résumé</button>
             <button class="barButton" id="connect" onclick="connect()">Connect</button>
         </div>
-
+        
         <div class="mainBody" id="mainBody">
-            <h1 id="mainBodyTitle">About</h1>
-            <p id="mainBodyText"></p>
+            <h1 id="mainBodyTitle"></h1>
+            <div id="mainBodyText"></div>
         </div>
     </div>
 
@@ -129,7 +130,6 @@
 
         function setBodyToPortfolio() {
             document.getElementById("mainBodyTitle").innerHTML = "Portfolio";
-            document.getElementById("mainBody").style.backgroundColor = "rgba(0,0,0,0)";
             document.getElementById("mainBodyText").innerHTML = document.getElementById("portfolioInfo").innerHTML;
             deleteResume();
             hideMenu();
@@ -148,14 +148,15 @@
 
         function createResume() {
             deleteResume();
-            var x = document.createElement("img");
-            x.setAttribute("src", "BradLaseckeResume.pdf");
+            var x = document.createElement("resumeImg");
+            x.setAttribute("src", "BradLaseckeResume.png");
             x.setAttribute("width", "100%");
             x.setAttribute("height", "auto");
             document.getElementById("mainBody").appendChild(x);
+            document.getElementById("mainBodyText").innerHTML = "<img src='BradLaseckeResume.png' class='resume'>";
         }
         function deleteResume() {
-            var imgs = document.getElementsByTagName("img");
+            var imgs = document.getElementsByTagName("resumeImg");
             for(i = imgs.length - 1; i >= 0; i--) {
                 imgs[i].parentNode.removeChild(imgs[i]);
             }
@@ -223,10 +224,26 @@
     
     <!-- micro-HTML files to fill the mainBody <p> tag with -->
     <script id="portfolioInfo" language="text">
-        <div class="portfolio">
-            Coming soon
+        <div class="portfolioMain">
+            <CENTER>
+            <div class="imgWrap">
+                <img src="appicon.png" class="portfolioImage">
+                <p class="imgDesc">Cheers, a social media for drinking. Made for iOS using swift for the application front, and PHP/MySQL for the server backend. <br><br>Still in development, estimated to be released on the app store summer of 2016</p>
+            </div>
+            <div class="imgWrap">
+                <img src="kitty.png" class="portfolioImage">
+                <p class="imgDesc">Look at this beautiful kitty</p>
+            </div>
+            <div class="imgWrap">
+                <img src="noPhoto.png" class="portfolioImage">
+                <p class="imgDesc">Theres nothing here</p>
+            </div>
+            <div class="imgWrap">
+                <img src="dolladolla.png" class="portfolioImage">
+                <p class="imgDesc">Dolla dolla make me holla</p>
+            </div>
+            </CENTER>
         </div>
-                
     </script>
     
     <script id="aboutText" language="text">
