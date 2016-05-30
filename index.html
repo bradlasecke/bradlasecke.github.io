@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
-  <link rel="preload" as="image" href="BradLaseckeResume.pdf" media="(max-width: 1000px)">
   <title>Brad Lasecke</title>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
@@ -110,7 +109,7 @@
     <script>
         function setBodyToAbout() {
             document.getElementById("mainBodyTitle").innerHTML = "About";
-            document.getElementById("mainBody").style.backgroundColor = "#FAFAFA";
+            //document.getElementById("mainBody").style.backgroundColor = "#FAFAFA";
             document.getElementById("mainBodyText").innerHTML = document.getElementById('aboutText').innerHTML;
             deleteResume();
             hideMenu();
