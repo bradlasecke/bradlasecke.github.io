@@ -1,6 +1,9 @@
 body {
-  margin: 10px;
-    background-color: rgba(200,200,200,0.2);
+    margin: 10px;
+    background-color: #526F35;
+    background-image: url(background.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 
@@ -40,12 +43,14 @@ div.navBar {
 div.mainBody {
     opacity: 1.0;
     color: black;
-    background-color: #FFEBCD;
+    background-color: rgba(255,235,205,0.0);
+    /*background-color:  #FFEBCD;*/
     margin-left: 126px;
     padding-top: 8px;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 20px;
+    min-height: 300px;
 }
 
 div.moreInfo {
@@ -54,6 +59,7 @@ div.moreInfo {
 
 div.buttonContainer {
     position: relative;
+    text-align: center;
 }
 
 div.currentInfo {
@@ -65,6 +71,9 @@ div.currentInfo {
 div.listBlock {
     display: inline-block;
     margin-left: 0px;
+}
+div.portfolio {
+    text-align: center;
 }
 
 
@@ -110,7 +119,7 @@ button.aboutMe {
     border-top-right-radius: 10px;
 }
 button.aboutMe:hover {
-    background-color: #C1C1C1;
+    background-color: #FFEFCF;
 }
 
 button.connect {
@@ -152,9 +161,10 @@ button.menu {
 }
 
 #mainBodyText {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 12px;
+    margin-right: 12px;
     margin-bottom: 20px;
+    text-align: left;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
