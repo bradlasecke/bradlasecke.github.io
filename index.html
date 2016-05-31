@@ -154,12 +154,15 @@
             x.setAttribute("width", "100%");
             x.setAttribute("height", "auto");
             document.getElementById("mainBody").appendChild(x);
+            <!--
             if(mobile) {
                 document.getElementById("mainBodyText").innerHTML = document.getElementById("resumeInfoMobile").innerHTML;
             }
             else {
                 document.getElementById("mainBodyText").innerHTML = document.getElementById("resumeInfo").innerHTML;
             }
+            -->
+            document.getElementById("mainBodyText").innerHTML = document.getElementById("resumeInfo").innerHTML;
         }
         function deleteResume() {
             var imgs = document.getElementsByTagName("resumeImg");
