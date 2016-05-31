@@ -121,7 +121,6 @@
 
         function setBodyToResume() {
             document.getElementById("mainBodyTitle").innerHTML = "Résumé";
-            document.getElementById("mainBodyText").innerHTML = "";
             createResume();
             hideMenu();
             activeButtonID = "res";
@@ -153,7 +152,7 @@
             x.setAttribute("width", "100%");
             x.setAttribute("height", "auto");
             document.getElementById("mainBody").appendChild(x);
-            document.getElementById("mainBodyText").innerHTML = "<img src='BradLaseckeResume.png' class='resume'>";
+            document.getElementById("mainBodyText").innerHTML = document.getElementById("resumeInfo").innerHTML;
         }
         function deleteResume() {
             var imgs = document.getElementsByTagName("resumeImg");
@@ -260,6 +259,17 @@
                     <div class="currentInfo" id="currentInfo"></div>
                 </div>
                 
+    </script>
+    
+    <script id="resumeInfo" language="text">
+        <CENTER>
+            <a download="BradLaseckeResume.pdf" href="BradLaseckeResume.pdf" style="text-decoration:none;">
+                <button class="connect">
+                    Download
+                </button>
+            </a>
+        </CENTER>
+        <img src='BradLaseckeResume.png' class='resume'>
     </script>
     
     <script id="history" language="text">
