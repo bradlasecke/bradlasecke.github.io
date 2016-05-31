@@ -11,7 +11,8 @@
         var $width = 0;
         var activeButtonID = "about";
         var activeAboutTab = "history";
-        var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent); 
+        var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        var mobile = false;
         //to set a link to the iOS app store in the portfolio page if the user has an iOS device
         
         $(window).load(function() {
@@ -26,6 +27,7 @@
                 $("#navBar").css("left", "15px");
             }
             $width = $(window).width();
+            mobile = ($width > 420);
         });
     </script>
 
@@ -152,7 +154,12 @@
             x.setAttribute("width", "100%");
             x.setAttribute("height", "auto");
             document.getElementById("mainBody").appendChild(x);
-            document.getElementById("mainBodyText").innerHTML = document.getElementById("resumeInfo").innerHTML;
+            if(mobile) {
+                document.getElementById("mainBodyText").innerHTML = document.getElementById("resumeInfoMobile").innerHTML;
+            }
+            else {
+                document.getElementById("mainBodyText").innerHTML = document.getElementById("resumeInfo").innerHTML;
+            }
         }
         function deleteResume() {
             var imgs = document.getElementsByTagName("resumeImg");
@@ -264,11 +271,13 @@
     <script id="resumeInfo" language="text">
         <CENTER>
             <a download="BradLaseckeResume.pdf" href="BradLaseckeResume.pdf" style="text-decoration:none;">
-                <button class="connect">
-                    Download
-                </button>
+                <button class="connect">Download</button>
             </a>
         </CENTER>
+        <img src='BradLaseckeResume.png' class='resume'>
+    </script>
+    
+    <script id="resumeInfoMobile" language="text">
         <img src='BradLaseckeResume.png' class='resume'>
     </script>
     
