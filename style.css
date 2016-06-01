@@ -186,7 +186,7 @@ button.menu {
 }
 
 
-/* Labels (h1, p, etc) */
+/* Labels (h1, p, a, etc) */
 
 #mainBodyTitle {
     margin-top: 5px;
@@ -200,6 +200,12 @@ button.menu {
     margin-bottom: 20px;
     text-align: left;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+#linkToAppStore {
+    text-decoration: underline;
+    color: white;
+    margin-bottom: 0px;
 }
 
 p.line {
