@@ -105,7 +105,51 @@ p.imgDesc {
 
     transition: opacity 0.667s;
 }
+p.imgDescWithLink {
+    position: absolute;
+    top: 0px;
+    width: 190px;
+    height: 170px;
+    margin: 0px;
+    padding: 10px;
+    background: rgba(29, 106, 154, 0.72);
+    color: #fff;
+    
+    vertical-align: middle;
+    text-align: left;
+    
+    visibility: hidden;
+    opacity: 0;
+
+    transition: opacity 0.667s;
+}
+a.linkToAppStore {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 210px;
+    height: 20px;
+    margin: 0px;
+    background: rgba(29, 106, 154, 0.72);
+    color: white;
+    
+    vertical-align: middle;
+    text-align: center;
+    
+    visibility: hidden;
+    opacity: 0;
+
+    transition: opacity 0.667s;
+}
 .imgWrap:hover .imgDesc {
+    visibility: visible;
+    opacity: 1;
+}
+.imgWrap:hover .imgDescWithLink {
+    visibility: visible;
+    opacity: 1;
+}
+.imgWrap:hover .linkToAppStore {
     visibility: visible;
     opacity: 1;
 }
@@ -200,12 +244,6 @@ button.menu {
     margin-bottom: 20px;
     text-align: left;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-
-#linkToAppStore {
-    text-decoration: underline;
-    color: white;
-    margin-bottom: 0px;
 }
 
 p.line {
