@@ -130,6 +130,7 @@ a.linkToAppStore {
     width: 210px;
     height: 20px;
     margin: 0px;
+    padding-bottom: 5px;
     background: rgba(29, 106, 154, 0.72);
     color: white;
     
