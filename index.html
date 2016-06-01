@@ -131,7 +131,10 @@
             document.getElementById("mainBodyTitle").innerHTML = "Portfolio";
             document.getElementById("mainBodyText").innerHTML = document.getElementById("portfolioInfo").innerHTML;
             if(iOS) {
-                document.getElementById("linkToAppStore").innerHTML = "View on the App Store";
+                document.getElementById("linkToAppStore").innerHTML = "<br>View on the App Store";
+            }
+            else {
+               document.getElementById("linkToAppStore").innerHTML = ""; 
             }
             deleteResume();
             hideMenu();
