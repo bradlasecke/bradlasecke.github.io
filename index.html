@@ -130,6 +130,9 @@
         function setBodyToPortfolio() {
             document.getElementById("mainBodyTitle").innerHTML = "Portfolio";
             document.getElementById("mainBodyText").innerHTML = document.getElementById("portfolioInfo").innerHTML;
+            if(iOS) {
+                document.getElementById("linkToAppStore").innerHTML = "View on the App Store";
+            }
             deleteResume();
             hideMenu();
             activeButtonID = "portfolio";
@@ -233,7 +236,11 @@
             <CENTER>
             <div class="imgWrap">
                 <img src="appicon.png" class="portfolioImage">
-                <p class="imgDesc">Cheers, a social media for drinking. Made for iOS using swift for the application front, and PHP/MySQL for the server backend. <br><br>Still in development, estimated to be released on the app store summer of 2016</p>
+                <p class="imgDesc">
+                    Cheers, a social media for drinking. Made for iOS using Swift, PHP, and MySQL. <br><br>
+                    Still in development, estimated to be released on the app store summer of 2016.
+                    <a id="linkToAppStore" href="#"></a>
+                </p>
             </div>
             <div class="imgWrap">
                 <img src="kitty.png" class="portfolioImage">
