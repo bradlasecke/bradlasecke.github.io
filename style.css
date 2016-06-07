@@ -11,10 +11,9 @@ body {
 div.titleBar {
     width: 100%;
     height: 80px;
-    line-height: 75px;
     
     text-align: left;
-    padding: 10px;
+    padding-left: 0px;
     
     color: black;
     background-color: #add8e6;
@@ -254,8 +253,17 @@ p.indent {
 
 p.description {
     margin-top: 4px;
-    padding-left: 15px;
+    padding-left: 35px;
     font-size: 15px;
+    vertical-align: middle;
+    color: black;
+}
+
+p.name {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding-left: 15px;
+    font-size: 35px;
     vertical-align: middle;
     color: black;
 }
