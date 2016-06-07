@@ -1,5 +1,5 @@
 body {
-    margin: 10px;
+    margin: 0px;
     background-color: #FFFFFF;
     /*background-image: url(background.jpg);*/
     background-size: 100%;
@@ -13,14 +13,13 @@ div.titleBar {
     height: 80px;
     line-height: 75px;
     
-    text-align: center;
+    text-align: left;
+    padding: 10px;
+    
     color: black;
-    background-color: transparent;
+    background-color: #add8e6;
     font-size: 35px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 0px;
+    margin: 0px;
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
@@ -30,7 +29,7 @@ div.titleBar {
 div.container {
     margin-left: 1%;
     margin-right: 1%;
-    margin-top: 0px;
+    margin-top: 10px;
     background-color: transparent;
 }
 
@@ -198,7 +197,7 @@ button.aboutMe {
     border-top-right-radius: 10px;
 }
 button.aboutMe:hover {
-    background-color: #FFEFCF;
+    background-color: #add8e6;
 }
 
 button.connect {
@@ -247,17 +246,18 @@ button.menu {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-p.line {
-    width: 300px;
-    height: 2px;
-    background-color: black;
-    margin-top: 5px;
-}
-
 p.indent {
     text-indent: 25px;
     text-align: left;
     margin-bottom: -15px;
+}
+
+p.description {
+    margin-top: 4px;
+    padding-left: 15px;
+    font-size: 15px;
+    vertical-align: middle;
+    color: black;
 }
 
 
