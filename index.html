@@ -94,7 +94,7 @@
     
     <button class="menu" id="menu" onclick="showMenu()"></button>
     
-    <div class="container" onclick="hideMenu()">
+    <div class="container" id="container">
         <div class="navBar" id="navBar">
             <button class="barButton" id="about" onclick="setBodyToAbout()">About</button>
             <button class="barButton" id="portfolio" onclick="setBodyToPortfolio()">Portfolio</button>
@@ -174,7 +174,7 @@
 
         function showMenu() {
             if(window.innerWidth < 400) {
-                //document.getElementById("container").onclick = hideMenu();
+                document.getElementById("container").onclick = hideMenu;
                 document.getElementById("navBar").style.left = "15px";
                 document.getElementById("mainBody").style.marginLeft = "126px";
                 document.getElementById("menu").style.left = "-200px";
@@ -182,7 +182,7 @@
         }
         function hideMenu() {
             if(window.innerWidth < 400) {
-                //document.getElementById("container").onclick = null;
+                document.getElementById("container").onclick = null;
                 document.getElementById("navBar").style.left = "-200px";
                 document.getElementById("mainBody").style.marginLeft = "2px";
                 document.getElementById("menu").style.left = "18px";
