@@ -1,6 +1,6 @@
 body {
     margin: 0px;
-    background-color: #f6f6f6;
+    background-color: #fff;
     /*background-image: url(background.jpg);*/
     background-size: 100%;
     background-repeat: no-repeat;
@@ -267,6 +267,12 @@ p.name {
     font-size: 35px;
     vertical-align: middle;
     color: black;
+}
+
+footer {
+    text-align: center;
+    font-size: 12px;
+    color: #b3b3b3;
 }
 
 
