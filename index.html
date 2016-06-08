@@ -94,7 +94,7 @@
     
     <button class="menu" id="menu" onclick="showMenu()"></button>
     
-    <div class="container">
+    <div class="container" onclick="hideMenu()">
         <div class="navBar" id="navBar">
             <button class="barButton" id="about" onclick="setBodyToAbout()">About</button>
             <button class="barButton" id="portfolio" onclick="setBodyToPortfolio()">Portfolio</button>
@@ -163,13 +163,6 @@
             x.setAttribute("width", "100%");
             x.setAttribute("height", "auto");
             document.getElementById("mainBody").appendChild(x);
-            /*
-            if($width > 450) {
-                document.getElementById("mainBodyText").innerHTML = document.getElementById("resumeInfo").innerHTML;
-            }
-            else {
-                document.getElementById("mainBodyText").innerHTML = document.getElementById("resumeInfoMobile").innerHTML;
-            }*/
             document.getElementById("mainBodyText").innerHTML = document.getElementById("resumeInfoMobile").innerHTML;
         }
         function deleteResume() {
