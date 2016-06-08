@@ -1,6 +1,6 @@
 body {
     margin: 0px;
-    background-color: #FFFFFF;
+    background-color: #f6f6f6;
     /*background-image: url(background.jpg);*/
     background-size: 100%;
     background-repeat: no-repeat;
@@ -10,7 +10,7 @@ body {
 /* DIVS */
 div.titleBar {
     width: 100%;
-    height: 80px;
+    height: 100px;
     
     text-align: left;
     padding-left: 0px;
@@ -93,7 +93,7 @@ p.imgDesc {
     margin: 0px;
     padding: 10px;
     background: rgba(29, 106, 154, 0.72);
-    color: #fff;
+    color: white;
     
     vertical-align: middle;
     text-align: left;
@@ -254,16 +254,16 @@ p.indent {
 
 p.description {
     margin-top: 4px;
-    padding-left: 35px;
+    padding-left: 65px;
     font-size: 15px;
     vertical-align: middle;
     color: black;
 }
 
 p.name {
-    margin-top: 4px;
+    margin-top: 15px;
     margin-bottom: 4px;
-    padding-left: 15px;
+    padding-left: 40px;
     font-size: 35px;
     vertical-align: middle;
     color: black;
