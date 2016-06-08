@@ -224,6 +224,7 @@ button.menu {
     margin-top: 12.5px;
     width: 35px;
     height: 35px;
+    border-radius: 10px;
     left: -200px;
     border: 1px solid #008CBA;
     color: black;
