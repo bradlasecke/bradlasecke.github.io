@@ -7,6 +7,7 @@
   <title>Brad Lasecke</title>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="jquery.easing.1.3.js"></script>
     <script>
         var $width = 0;
         var activeButtonID = "about";
@@ -26,6 +27,16 @@
                 $("#navBar").css("left", "15px");
             }
             $width = $(window).width();
+        });
+        
+        $(document).ready(function(){
+            $("#titleBar").animate({
+                left: '0px', 
+                opacity: '1.0'
+            }, {
+                duration: 700,
+                easing: 'easeOutBack'
+            });
         });
     </script>
 
@@ -85,7 +96,7 @@
 <body>
 
     <a href="index.html">
-        <div class="titleBar">
+        <div class="titleBar" id="titleBar">
             <p class="name">Brad Lasecke</p>
             <p class="description">Full-Stack Developer</p>
         </div>
