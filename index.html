@@ -30,7 +30,7 @@
         });
         
         $(document).ready(function(){
-            $("#titleBar").animate({
+            $("#nameInfo").animate({
                 left: '0px', 
                 opacity: '1.0'
             }, {
@@ -97,11 +97,13 @@
 
     <a href="index.html">
         <div class="titleBar" id="titleBar">
-            <p class="name">Brad Lasecke</p>
-            <p class="description">Full-Stack Developer</p>
+            <div class="nameInfo" id="nameInfo">
+                <p class="name">Brad Lasecke</p>
+                <p class="description">Full-Stack Developer</p>
+            </div>
         </div>
-        <div style="width:100%; height: 4px; background-color: #008CBA"></div>
     </a>
+    <div style="width:100%; height: 4px; background-color: #008CBA"></div>
     
     <button class="menu" id="menu" onclick="showMenu()"></button>
     
