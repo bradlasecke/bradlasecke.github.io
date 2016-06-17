@@ -119,6 +119,8 @@ p.imgDescWithLink {
     padding: 7px;
     background: rgba(29, 106, 154, 0.72);
     color: #fff;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
     
     vertical-align: middle;
     text-align: left;
@@ -138,6 +140,8 @@ a.linkToAppStore {
     padding-bottom: 5px;
     background: rgba(29, 106, 154, 0.72);
     color: white;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
     
     vertical-align: middle;
     text-align: center;
@@ -291,6 +295,7 @@ img.portfolioImage {
     background-size: cover;
     border: clear;
     background-repeat: no-repeat;
+    border-radius: 15px;
     width: 210px;
     height: 210px;
     margin: 0px;
